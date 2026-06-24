@@ -16,5 +16,6 @@ namespace Format.Domain.Models
         public DateTime DataCadastro { get; set; }
 
         public ICollection<Secoes> Secoes { get; set; }
+        public ICollection<Referencias> Referencias { get; set; }
     }
 }
