@@ -20,6 +20,11 @@ namespace Format.Infra.Data.Mappings
                     .WithMany(x => x.Documentos)
                     .HasForeignKey( x=> x.IdTipoDocumento)
                     .OnDelete(DeleteBehavior.SetNull);
+
+                builder.HasOne(x => x.Usuario)
+                    .WithMany(x => x.Documentos)
+                    .HasForeignKey(x => x.IdUsuario)
+                    .OnDelete(DeleteBehavior.Restrict);
             }
         }
     }

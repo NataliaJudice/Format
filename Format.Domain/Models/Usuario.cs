@@ -10,5 +10,6 @@ namespace Format.Domain.Models
     {
         public int IdUsuario {  get; set; }
         public string Nome { get; set; }
+        public ICollection<Documento> Documentos { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace Format.Domain.Models
         public string Nome { get; set; }
         public bool Status { get; set; }
         public DateTime DataCadastro { get; set; }
-        public ICollection<Documento> Documentos { get; set; }
+        public ICollection<Documento>? Documentos { get; set; }
     }
 }

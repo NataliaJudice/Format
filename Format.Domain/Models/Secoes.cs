@@ -11,8 +11,9 @@ namespace Format.Domain.Models
         public int IdSecoes { get; set; }
         public int IdDocumento { get; set; }
         public Documento Documento { get; set; }
-        public int IdPai { get; set; }
+        public int? IdPai { get; set; }
         public Secoes? SecaoPai { get; set; }
+        public ICollection<Secoes> SecoesFilhas { get; set; } = new List<Secoes>();
         public int Nivel {  get; set; }
         public string Nome { get; set; }
         public bool Status { get; set; }
