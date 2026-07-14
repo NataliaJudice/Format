@@ -1,4 +1,5 @@
-﻿using Format.Domain.Models;
+﻿using Format.Application.Interfaces;
+using Format.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Format.Infra.Data.Data
 {
-    public class FormatDbContext : DbContext
+    public class FormatDbContext : DbContext, IFormatDbContext
     {
         public FormatDbContext(DbContextOptions<FormatDbContext> options)
             : base(options)

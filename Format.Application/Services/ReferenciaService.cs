@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Format.Application.Services
 {
-    internal class ReferenciaService : IReferenciaService
+    public class ReferenciaService : IReferenciaService
     {
         private readonly IFormatDbContext _context;
 

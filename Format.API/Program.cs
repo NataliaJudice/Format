@@ -1,7 +1,9 @@
+using Format.Application.Interfaces;
 using Format.Infra.Data.Data;
+using Format.Infra.Ioc;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructureIoC(builder.Configuration);
 
 // Add services to the container.
 
@@ -19,6 +21,10 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FormatDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+// Adicione esta linha logo abaixo:
+builder.Services.AddScoped<IFormatDbContext>(provider =>
+    provider.GetRequiredService<FormatDbContext>());
 
 var app = builder.Build();
 

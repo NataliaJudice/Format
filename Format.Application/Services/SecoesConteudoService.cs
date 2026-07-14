@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Format.Application.Services
 {
-    public class SecoesConteudoervice : ISecoesConteudoService
+    public class SecoesConteudoService : ISecoesConteudoService
     {
         private readonly IFormatDbContext _context;
 
-        public SecoesConteudoervice(IFormatDbContext context)
+        public SecoesConteudoService(IFormatDbContext context)
         {
             _context = context;
         }
